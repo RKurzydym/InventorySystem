@@ -9,7 +9,8 @@ asyncio
 
 ## Getting started
 Run Pipenv shell for Easy Use 
-Run
+
+To Run it 
 ```
 Prisma generate
 Prisma push DB
