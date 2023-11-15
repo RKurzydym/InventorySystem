@@ -9,9 +9,13 @@ asyncio
 
 ## Getting started
 Run Pipenv shell for Easy Use 
-run Prisma generate
-run Prisma push DB
-run python main.py
+Run
+```
+Prisma generate
+Prisma push DB
+python main.py
+```
+
 
 ## Integrate with your tools
 
