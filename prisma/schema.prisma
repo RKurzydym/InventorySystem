@@ -1,0 +1,36 @@
+// database
+datasource db {
+  provider = "sqlite"
+  url      = "file:database.db"
+}
+
+// generator
+generator client {
+  provider             = "prisma-client-py"
+  recursive_type_depth = 5
+}
+model Inventory {
+  id    Int     @id @unique @default(autoincrement()) 
+  name  String? @unique
+  drawers Drawer[]
+}
+model Drawer {
+  id Int @id @unique @default(autoincrement())
+  name String @unique
+  inventoryId Int
+  inventory Inventory @relation(fields: [inventoryId], references: [id])
+    folders Folder[]
+}
+model Folder {
+    id Int @id @unique @default(autoincrement())
+    name String 
+    drawerId Int
+    drawer Drawer @relation(fields: [drawerId], references: [id])
+    subFolders SubFolder[]
+}
+model SubFolder{
+    id Int @id @unique @default(autoincrement())
+    name String
+    folderId Int
+    folder Folder @relation(fields: [folderId], references: [id])
+}
