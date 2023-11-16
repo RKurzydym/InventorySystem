@@ -33,4 +33,13 @@ model SubFolder{
     name String
     folderId Int
     folder Folder @relation(fields: [folderId], references: [id])
+    items Item[]
+}
+model Item {
+  id Int @id @unique @default(autoincrement())
+  name String
+  amount Int
+  subFolderId Int
+  subFolder SubFolder @relation(fields: [subFolderId], references: [id])
+
 }
