@@ -41,5 +41,12 @@ model Item {
   amount Int
   subFolderId Int
   subFolder SubFolder @relation(fields: [subFolderId], references: [id])
-
+  images Image[]
+}
+model Image {
+  id Int @id @unique @default(autoincrement())
+  name String
+  url String
+  itemId Int
+  item Item @relation(fields: [itemId], references: [id])
 }
