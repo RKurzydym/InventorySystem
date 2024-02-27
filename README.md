@@ -12,8 +12,8 @@ Run Pipenv shell for Easy Use
 
 To Run it 
 ```
-Prisma generate
-Prisma push DB
+prisma generate
+prisma db push
 python main.py
 ```
 
